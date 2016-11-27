@@ -15,7 +15,9 @@ class LoginGraphics
     //default field that will run on setup
     LoginGraphics ()
     {
-      scale = new PVector(width/ 2, height / 2);
+      scale = new PVector(width / 4, height / 4);
+      
+      graphics = createGraphics(width / 2, height / 2);
       
       //Image file loaded to PImage image
       img = loadImage("briefing.jpg");
@@ -26,7 +28,9 @@ class LoginGraphics
     //Function to render graphics, including background image
     void render()
     {
-      //Loading image to full size
+      //rescale image
+      img.resize(width, height);
+      //Loading image to scaled size
       image(img, 0, 0); 
       
       //Area for login text to appear generated
