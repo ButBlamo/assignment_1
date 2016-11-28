@@ -23,7 +23,7 @@ void setup()
   for (row = 0; row < rowCount; row++)
   {
     //Inserting values into arrayList through use of LoginText field
-    LoginText buffer = new LoginText(t.getString(row, 0), t.getString(row, 1));
+    LoginText buffer = new LoginText(t.getString(row, "Username"), t.getString(row, "Password"));
     
     users.add(buffer);
   }
@@ -35,16 +35,19 @@ Boolean isInputCorrect = false;
 
 void draw()
 {
-  
-  text(inputs[0], width / 2 - 75, height / 2 + 60);
-  text(inputs[1], width / 2 - 75, height / 2 + 120);
-  
-  //If enterCounter is equal to 2 then you know to call class that will check the table for validity
-  if (enterCounter > 1)
+  //Later on in the draw once the main menu is loaded we cant have the login screen looping every frame
+  if (isInputCorrect == false)
   {
-    //Make object to pass username and password values
-    LoginText validity = new LoginText(inputs[0], inputs[1], isInputCorrect);
+    text(inputs[0], width / 2 - 75, height / 2 + 60);
+    text(inputs[1], width / 2 - 75, height / 2 + 120);
+    
+    //If enterCounter is equal to 2 then you know to call class that will check the table for validity
+    if (enterCounter > 1)
+    {
+      //Make object to pass username and password values
+      LoginText validity = new LoginText(inputs[0], inputs[1], isInputCorrect);
    
+    }
   }
 }
 

@@ -28,12 +28,14 @@ class LoginText
       displayIntroduction();
     }//End field
     
+    
     //Second field will deal with user input when they attempt to login
     LoginText(String name, String passphrase, Boolean validCheck)
     {
       this.username = name;
       this.password = passphrase;
       this.isCorrect = validCheck;
+      
     }
     
     LoginText()
@@ -63,6 +65,28 @@ class LoginText
       text("Password:", topLeft.x + 50, height / 2 + 120);
       
     }
+    
+    
+    //Implement fxn checkingInput. It will search the arraylist users for a matching username and password
+    Boolean checkingInput()
+    {
+      //Iterate through arrayList
+      
+      //For loop for checking each line in arraylist for matching values
+      for (int row = 0; row < users.size(); row++)
+      {
+        LoginText iterate = users.get(row);
+        
+        //Check if user entered credentials exist in file
+        if (username.equals(iterate) && password.equals(iterate))
+        {
+          return true;
+        }
+      }
+      //No matching values
+      return false;
+    }
+      
     
     String toString()
     {
