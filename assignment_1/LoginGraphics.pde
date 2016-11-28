@@ -20,7 +20,7 @@ class LoginGraphics
       graphics = createGraphics(width / 2, height / 2);
       
       //Image file loaded to PImage image
-      img = loadImage("briefing.jpg");
+      img = loadImage("black_screen.jpg");
       
       render();
     }
@@ -35,7 +35,7 @@ class LoginGraphics
       
       //Area for login text to appear generated
       graphics.beginDraw();
-      graphics.background(0,200,0);
+      graphics.background(0,50,0);
       graphics.endDraw();
       
       //Drawing created graphics with image()
