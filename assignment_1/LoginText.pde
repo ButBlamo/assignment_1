@@ -50,6 +50,9 @@ class LoginText
       
       text(text, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
       
+      text("Username:", topLeft.x + 50, height / 2 + 60);
+      text("Password:", topLeft.x + 50, height / 2 + 120);
+      
     }
     
     String toString()
