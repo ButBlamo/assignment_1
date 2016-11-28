@@ -1,7 +1,7 @@
 //C15446648 Daniel Moloney oop assignment 1
 
 //Create arraylist for holding "correct" usernames and passwords
-ArrayList<String> users = new ArrayList<String>();
+ArrayList<LoginText> users = new ArrayList<LoginText>();
 
 void setup()
 {
@@ -24,6 +24,16 @@ void setup()
   {
     //Inserting values into arrayList through use of LoginText field
     LoginText buffer = new LoginText(t.getString(row, 0), t.getString(row, 1));
+    
+    users.add(buffer);
+  }
+  
+  //Testing if table read properly
+  for (row = 0; row < users.size(); row++)
+  {
+    LoginText buffer = users.get(row);
+    
+    println(buffer);
   }
   
 }

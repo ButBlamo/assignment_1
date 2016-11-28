@@ -23,7 +23,7 @@ class LoginGraphics
       img = loadImage("black_screen.jpg");
       
       render();
-    }
+    }//End default field
     
     //Function to render graphics, including background image
     void render()
@@ -42,7 +42,7 @@ class LoginGraphics
       tint(255, 127);
       //Drawing created graphics with image()
       image(graphics, scale.x, scale.y);
-    }
+    }//End fxn render
       
   
 }//End class LoginGraphics

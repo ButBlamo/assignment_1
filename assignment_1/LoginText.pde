@@ -10,19 +10,25 @@ class LoginText
   Boolean isCredentialsCorrect = false;
   
   
-    //Create field
+    //Create field. This field is for initial loading of usernames/passwords
     LoginText(String name, String passphrase)
     {
-      username = name;
-      password = passphrase;
-      
-      ValidateInput();
+      this.username = name;
+      this.password = passphrase;
+    }//End field
+    
+    //Second field will deal with user input when they attempt to login
+    LoginText(String name, String passphrase, Boolean validCheck)
+    {
     }
     
-    Boolean ValidateInput()
+    
+    String toString()
     {
-      
-    }
+      return username + "\t"
+                      + password + "\t";
+    }//End string conversion fxn
+    
   
   
 }
