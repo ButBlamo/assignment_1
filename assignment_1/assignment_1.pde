@@ -46,6 +46,12 @@ void draw()
     {
       //Make object to pass username and password values
       LoginText validity = new LoginText(inputs[0], inputs[1], isInputCorrect);
+      
+      //Call checkingInput
+      isInputCorrect = validity.checkingInput();
+      
+      textSize(35);
+      fill(50);
    
     }
   }

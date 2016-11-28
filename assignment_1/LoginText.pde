@@ -36,6 +36,9 @@ class LoginText
       this.password = passphrase;
       this.isCorrect = validCheck;
       
+      this.topLeft = new PVector(width / 4, height / 4);
+      this.bottomRight = new PVector(width / 4, height / 4);
+      
     }
     
     LoginText()
@@ -77,13 +80,32 @@ class LoginText
       {
         LoginText iterate = users.get(row);
         
+        println(username);
+        println(iterate.username);
+        println(password);
+        println(iterate.password);
+        
+        
         //Check if user entered credentials exist in file
-        if (username.equals(iterate) && password.equals(iterate))
+        if ((username.equals(iterate.username) == true) && (password.equals(iterate.password) == true))
         {
+          //Matches
+          textSize(25);
+          fill(255, 0, 0);
+          text("Success! please hold...", topLeft.x + 50, height / 2 + 180);
           return true;
         }
       }
       //No matching values
+      textSize(25);
+      fill(255, 0, 0);
+      text("ERROR: INCORRECT USERNAME OR PASSPHRASE", topLeft.x + 50, height / 2 + 180);
+      //Reset enterCounter
+      enterCounter = 0;
+      //Reset values in String inputs
+      inputs[0] = "";
+      inputs[1] = "";
+      inputs[2] = "";
       return false;
     }
       
