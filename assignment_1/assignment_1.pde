@@ -35,10 +35,9 @@ Boolean isInputCorrect = false;
 
 void draw()
 {
-  //Variable for holding if entered password was correct or not
   
-  text(inputs[0], width / 4 + 100, height / 2 + 100);
-  text(inputs[1], width / 4 + 100, height / 2 + 120);
+  text(inputs[0], width / 2 - 75, height / 2 + 60);
+  text(inputs[1], width / 2 - 75, height / 2 + 120);
   
   //If enterCounter is equal to 2 then you know to call class that will check the table for validity
   if (enterCounter > 1)
@@ -51,7 +50,7 @@ void draw()
 
 
 //String array for storing username and password input
-String[] inputs = new String[3];
+String[] inputs = {"", "", ""};
 //Will be my way of telling when to change the string to be edited
 int enterCounter = 0;
 
@@ -79,15 +78,25 @@ void keyPressed()
       enterCounter--;
       inputs[enterCounter] = inputs[enterCounter].substring(0, inputs[enterCounter].length() - 1);
     }
+    //Refresh screen if credentials not fully entered
+    if (enterCounter < 2)
+    {
+      LoginGraphics refreshScreen = new LoginGraphics();
+      LoginText refreshText = new LoginText();
+    }
+      
   }
   //Checking if user wants to delete all lines of text
   else if (keyCode == DELETE)
   {
     inputs[enterCounter] = "";
+    
+    LoginGraphics refreshScreen = new LoginGraphics();
+    LoginText refreshText = new LoginText();
   }
   //Checking for any more special keyCode letters before adding value into input box
   //Tell code to not add anymore inputs once enterCounter is above 1
-  else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && enterCounter < 2 )
+  else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && enterCounter < 2 && inputs[enterCounter].length() < 18 )
   {
     inputs[enterCounter] = inputs[enterCounter] + key;
   }

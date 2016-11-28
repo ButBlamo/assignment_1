@@ -29,6 +29,8 @@ class LoginGraphics
     //Function to render graphics, including background image
     void render()
     {
+      //Prevent overlayering
+      background(0);
       //rescale image
       img.resize(width, height);
       //Loading image to scaled size

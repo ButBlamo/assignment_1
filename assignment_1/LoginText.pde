@@ -21,8 +21,8 @@ class LoginText
       this.username = name;
       this.password = passphrase;
       
-      topLeft = new PVector(width / 4, height / 4);
-      bottomRight = new PVector(width / 4, height / 4);
+      this.topLeft = new PVector(width / 4, height / 4);
+      this.bottomRight = new PVector(width / 4, height / 4);
       
       //Call fxn for displaying "Enter user details..." text
       displayIntroduction();
@@ -34,6 +34,15 @@ class LoginText
       this.username = name;
       this.password = passphrase;
       this.isCorrect = validCheck;
+    }
+    
+    LoginText()
+    {
+      //For refreshing screen
+      this.topLeft = new PVector(width / 4, height / 4);
+      this.bottomRight = new PVector(width / 4, height / 4);
+      
+      displayIntroduction();
     }
     
     //Implement fxn displayIntroduction
