@@ -30,13 +30,23 @@ void setup()
   
 }
 
+//Input validity checker for allowing user to progress past login screen
+Boolean isInputCorrect = false;
 
 void draw()
 {
   //Variable for holding if entered password was correct or not
-  Boolean isInputCorrect = false;
   
-  text(username_input, 
+  text(inputs[0], width / 4 + 100, height / 2 + 100);
+  text(inputs[1], width / 4 + 100, height / 2 + 120);
+  
+  //If enterCounter is equal to 2 then you know to call class that will check the table for validity
+  if (enterCounter > 1)
+  {
+    //Make object to pass username and password values
+    LoginText validity = new LoginText(inputs[0], inputs[1], isInputCorrect);
+   
+  }
 }
 
 
@@ -51,8 +61,8 @@ void keyPressed()
 {
   //Using keyPressed to allow user to input details
   
-  //Checking if enter has been pressed (increment enterCounter)
-  if (key == ENTER)
+  //Checking if enter has been pressed (increment enterCounter). Prevented null pointer exception
+  if (key == ENTER && enterCounter < 2)
   {
     enterCounter++;
   }
@@ -76,11 +86,10 @@ void keyPressed()
     inputs[enterCounter] = "";
   }
   //Checking for any more special keyCode letters before adding value into input box
-  else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT)
+  //Tell code to not add anymore inputs once enterCounter is above 1
+  else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && enterCounter < 2 )
   {
     inputs[enterCounter] = inputs[enterCounter] + key;
   }
-}
-  //Key is equal to enter, add value into query
   
 }//End fxn keyPressed
