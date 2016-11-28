@@ -28,17 +28,12 @@ void setup()
     users.add(buffer);
   }
   
-  //Testing if table read properly
-  for (row = 0; row < users.size(); row++)
-  {
-    LoginText buffer = users.get(row);
-    
-    println(buffer);
-  }
-  
 }
 
 void draw()
 {
+  //Variable for holding if entered password was correct or not
+  Boolean isInputCorrect = false;
+  
   
 }

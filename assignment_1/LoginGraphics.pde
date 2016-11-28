@@ -15,6 +15,7 @@ class LoginGraphics
     //default field that will run on setup
     LoginGraphics ()
     {
+      //Using PVectors
       scale = new PVector(width / 4, height / 4);
       
       graphics = createGraphics(width / 2, height / 2);

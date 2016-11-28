@@ -7,7 +7,12 @@ class LoginText
   String username;
   String password;
   
-  Boolean isCredentialsCorrect = false;
+  //Graphic overlay location for text box
+  PVector topLeft;
+  //Bottom right PVector
+  PVector bottomRight;
+  
+  Boolean isCorrect;
   
   
     //Create field. This field is for initial loading of usernames/passwords
@@ -15,13 +20,37 @@ class LoginText
     {
       this.username = name;
       this.password = passphrase;
+      
+      topLeft = new PVector(width / 4, height / 4);
+      bottomRight = new PVector(width / 4, height / 4);
+      
+      //Call fxn for displaying "Enter user details..." text
+      displayIntroduction();
     }//End field
     
     //Second field will deal with user input when they attempt to login
     LoginText(String name, String passphrase, Boolean validCheck)
     {
+      this.username = name;
+      this.password = passphrase;
+      this.isCorrect = validCheck;
     }
     
+    //Implement fxn displayIntroduction
+    void displayIntroduction()
+    {
+      //Calculating bottom right
+      bottomRight.add(topLeft);
+      
+      //Text size and colour
+      textSize(35);
+      fill(50);
+      //Create string for easier writing the text() fxn
+      String text = "Welcome to the Atracel super weapons ordering system. Enter your login credentials.";
+      
+      text(text, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
+      
+    }
     
     String toString()
     {
