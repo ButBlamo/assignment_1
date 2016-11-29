@@ -48,4 +48,4 @@ What I was most proud of in this assignment:
 	:D
 	
 	
-	[![Video](http://img.youtube.com/vi/https://www.youtube.com/watch?v=aXKoSmYp4CQ&feature=youtu.be&ab_channel=Toerag.jpg)](https://www.youtube.com/watch?v=aXKoSmYp4CQ&feature=youtu.be&ab_channel=Toerag)
+	[![Video](http://img.youtube.com/vi/https://watch?v=aXKoSmYp4CQ&t=1s&ab_channel=Toerag/0.jpg)](https://www.youtube.com/watch?v=aXKoSmYp4CQ&feature=youtu.be&ab_channel=Toerag)
