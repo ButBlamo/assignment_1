@@ -3,6 +3,8 @@
 //Create arraylist for holding "correct" usernames and passwords
 ArrayList<LoginText> users = new ArrayList<LoginText>();
 
+Loading loadsMenu;
+
 void setup()
 {
   size(1280, 720);
@@ -15,6 +17,9 @@ void setup()
   
   //Declare and construct an object of class LoginGraphics
   LoginGraphics loginScreen = new LoginGraphics();
+  
+  //Initialising global variable loadsMenu (for use in draw / prevented framerate dip)
+  loadsMenu = new Loading();
   
   //Make sure users arrayList is empty
   users.clear();
@@ -35,6 +40,11 @@ Boolean isInputCorrect = false;
 
 //For allowing fading of images
 Boolean imageGone = false;
+
+//Loading screen variable to determine start/finish of loading screen
+int loadingScreenCounter = 0;
+//theta accumulator
+float thetaAdder = 0.1;
 
 void draw()
 {
@@ -62,17 +72,12 @@ void draw()
     //Remove login screen to allow for next screens
     if (imageGone == false)
     {
-      Loading loadsMenu = new Loading();
       //Remove image
       imageGone = loadsMenu.fading();
-      //Loading loop for a couple of seconds
-      for (int lengthLoading = 0; lengthLoading < 10000; lengthLoading++)
-      {
-        loadsMenu.loadingLoop();
-      }
     }
-    else
+    else if (loadingScreenCounter <= 1000)
     {
+      loadsMenu.loadingLoop();
     }
     
   }

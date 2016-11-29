@@ -4,7 +4,6 @@ class Loading extends LoginGraphics
   //Background will fade
   PVector centerPosition;
   float x1, y1;
-  float theta;
   float speed;
   float radius;
   color c;
@@ -18,9 +17,8 @@ class Loading extends LoginGraphics
     Loading()
     {
       centerPosition = new PVector(width / 2, height / 2);
-      theta = 0.1;
       speed = 0.1;
-      radius = width / 4;
+      radius = width / 6;
       c = color(255);
       
       loadingText = "Please hold...";
@@ -45,17 +43,22 @@ class Loading extends LoginGraphics
     //Loading animation method
     void loadingLoop()
     {
+      background(0);
+      stroke(c);
       textSize(25);
       text(loadingText, centerPosition.x - 100, centerPosition.y - 100);
       
+      textSize(50);
+      text("A", centerPosition.x, centerPosition.y);
+      
 
         fill(255);
-        x1 = centerPosition.x + radius * cos(theta);
-        y1 = centerPosition.y + radius * sin(theta);
+        x1 = centerPosition.x + radius * cos(thetaAdder);
+        y1 = centerPosition.y + radius * sin(thetaAdder);
         
         ellipse(x1, y1, 25, 25);
         
-        theta += speed;
+        thetaAdder += speed;
       
     }
 }
