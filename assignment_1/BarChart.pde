@@ -1,0 +1,4 @@
+class BarChart
+{
+  String noSold;
+}

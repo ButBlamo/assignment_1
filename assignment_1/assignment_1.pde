@@ -33,6 +33,12 @@ void setup()
     users.add(buffer);
   }
   
+  
+  //Second table for bar chart
+  t = loadTable("statistics.tsv", "header");
+  
+  rowCount = t.getRowCount();
+  
 }
 
 //Input validity checker for allowing user to progress past login screen
