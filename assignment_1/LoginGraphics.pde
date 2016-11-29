@@ -21,7 +21,7 @@ class LoginGraphics
       graphics = createGraphics(width / 2, height / 2);
       
       //Image file loaded to PImage image
-      img = loadImage("black_screen.jpg");
+      img = loadImage("matrix.jpg");
       
       render();
     }//End default field
@@ -38,11 +38,9 @@ class LoginGraphics
       
       //Area for login text to appear generated
       graphics.beginDraw();
-      graphics.background(0,60,0);
+      graphics.background(0);
       graphics.endDraw();
       
-      //Set to display at half opacity for a more hover-ey feel
-      tint(255, 127);
       //Drawing created graphics with image()
       image(graphics, scale.x, scale.y);
     }//End fxn render

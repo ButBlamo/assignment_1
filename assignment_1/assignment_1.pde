@@ -33,6 +33,9 @@ void setup()
 //Input validity checker for allowing user to progress past login screen
 Boolean isInputCorrect = false;
 
+//For allowing fading of images
+Boolean imageGone = false;
+
 void draw()
 {
   //Later on in the draw once the main menu is loaded we cant have the login screen looping every frame
@@ -52,10 +55,19 @@ void draw()
       
       textSize(35);
       fill(50);
-   
     }
   }
+  else
+  {
+    if (imageGone == false)
+    {
+      Loading loadsMenu = new Loading();
+      imageGone = loadsMenu.fading();
+    }
+    
+  }
 }
+
 
 
 //String array for storing username and password input
@@ -63,8 +75,7 @@ String[] inputs = {"", "", ""};
 //Will be my way of telling when to change the string to be edited
 int enterCounter = 0;
 
-
-//All user input on the login screen will be dealt with here
+/*All user input on the login screen will be dealt with here */
 void keyPressed()
 {
   //Using keyPressed to allow user to input details
