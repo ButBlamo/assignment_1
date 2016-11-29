@@ -80,12 +80,6 @@ class LoginText
       {
         LoginText iterate = users.get(row);
         
-        println(username);
-        println(iterate.username);
-        println(password);
-        println(iterate.password);
-        
-        
         //Check if user entered credentials exist in file
         if ((username.equals(iterate.username) == true) && (password.equals(iterate.password) == true))
         {

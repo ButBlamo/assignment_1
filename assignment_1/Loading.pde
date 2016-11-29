@@ -1,41 +1,49 @@
+//Practicing inheritance with this class
 class Loading extends LoginGraphics
 {
   //Background will fade
-  float fade;
+  PVector position;
+  float theta;
+  float speed;
+  float radius;
+  color c;
+  
+  //Text
+  String loadingText;
   
   
     //Default field
     Loading()
     {
-      fade = 250;
+      position = new PVector(width / 2, height / 2);
+      theta = 0;
+      speed = 0.1;
+      radius = width / 6;
+      c = color(255);
       
+      loadingText = "Please hold...";
+      fill(0);
     }
     
+    //Clearing screen
     boolean fading()
     {
-      //Delay the program so the fade isn't instantaneous
-      frameRate(1);
-      
-      //Slowly making screen turn to black  
-      println(frameRate);
-      
-      while (fade != 0)
-      {
-        
-        ///Do the same to background picture
-        image(img, 0, fade);
-        
-        fade = fade - 10;
-        
-      }
+      //Wait 2 seconds to allow user to read response
+      delay(2000);
       //Clear graphics
-          graphics.beginDraw();
-          graphics.clear();
-          graphics.endDraw();
+      graphics.beginDraw();
+      graphics.clear();
+      graphics.endDraw();
+         
+      background(0);
           
-          frameRate(60);
-          background(0);
-          
-          return true;
+      return true;
+    }
+    
+    //Loading animation method
+    void loadingLoop()
+    {
+      textSize(25);
+      text(loadingText, position.x - 50, position.y - 50);
     }
 }

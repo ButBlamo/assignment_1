@@ -59,10 +59,17 @@ void draw()
   }
   else
   {
+    //Remove login screen to allow for next screens
     if (imageGone == false)
     {
       Loading loadsMenu = new Loading();
+      //Remove image
       imageGone = loadsMenu.fading();
+      //Loading loop for a couple of seconds
+      loadsMenu.loadingLoop();
+    }
+    else
+    {
     }
     
   }
