@@ -46,6 +46,9 @@ int loadingScreenCounter = 0;
 //theta accumulator
 float thetaAdder = 0.1;
 
+//Gamestate will determine what screen is loaded
+int gameState = 0;
+
 void draw()
 {
   //Later on in the draw once the main menu is loaded we cant have the login screen looping every frame
@@ -75,11 +78,21 @@ void draw()
       //Remove image
       imageGone = loadsMenu.fading();
     }
-    else if (loadingScreenCounter <= 1000)
+    if (loadingScreenCounter < 300 && imageGone == true)
     {
       loadsMenu.loadingLoop();
+      
+      loadingScreenCounter++;
     }
     
+    //Main screen menu object generated
+    MainMenu mainScreen;
+    
+    //Move onto main menu now
+    if (gameState == 0 && loadingScreenCounter == 300)
+    {
+       mainScreen = new MainMenu();
+    }
   }
 }
 
