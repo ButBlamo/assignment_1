@@ -66,7 +66,10 @@ void draw()
       //Remove image
       imageGone = loadsMenu.fading();
       //Loading loop for a couple of seconds
-      loadsMenu.loadingLoop();
+      for (int lengthLoading = 0; lengthLoading < 10000; lengthLoading++)
+      {
+        loadsMenu.loadingLoop();
+      }
     }
     else
     {
