@@ -11,9 +11,9 @@ class MainMenu
     MainMenu()
     {
       //Using PVectors
-      scale = new PVector(width / 2, height / 2);
+      scale = new PVector(0 , 0);
       
-      menu = createGraphics(width / 2, height / 2);
+      menu = createGraphics(width / 4, height);
       
       //Image file loaded to PImage image
       img = loadImage("briefing.jpg");
