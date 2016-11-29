@@ -92,6 +92,7 @@ void draw()
     if (gameState == 0 && loadingScreenCounter == 300)
     {
        mainScreen = new MainMenu();
+       mainScreen.radar();
     }
   }
 }
