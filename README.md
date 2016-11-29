@@ -16,3 +16,35 @@ What I was most proud of in this assignment:
 		was well animated in my opinion. It made me happy to see my perseverance infront of me.
 		
 	Class Loading used inheritance. I learned about inheritance and benefitted from its convenience.
+	
+	
+	What I learned: 
+	
+		inheritance
+		using P3D
+		how to create dynamically changing text boxes
+		file manipulation techniques
+		vector usage
+		image file manipulation
+		transparency usage
+		improved my skill in arrayList manipulation
+		furthered my understanding of classes
+		
+		
+	What I feel I need to improve on most
+		
+		I need to work on my code design. While a lot of my code was functioning and complicated, I feel as if 
+		I did not do my effort any justice in the more clunky design at stages.
+		
+		I learned from doing this assignment that I must improve my code design skills.
+		
+		I must make sure to use proper sound files next time for a more immersive experience.
+		
+	
+	Overall, the assignment was a great learning experience! I know now what shortcomings I can improve
+	for the christmas assignment. I will strive to make my next assignment more advanced using 
+	the knowledge i gained. 
+	
+	:D
+	
+	

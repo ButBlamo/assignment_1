@@ -127,8 +127,9 @@ void draw()
         println(displayFile);
         
       }
-      //Wait 10 seconds then exit program
-      delay(10000);
+      //Wait 5 seconds then exit program
+      delay(5000);
+      exit();
       
     }
     else if (gameState == 2 && loadingScreenCounter == 300)
