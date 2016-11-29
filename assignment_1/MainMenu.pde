@@ -56,7 +56,12 @@ class MainMenu
       //Image file loaded to PImage image
       img = loadImage("briefing.jpg");
       
-      render();
+      if (preventMainMenuRedraw == 1)
+      {
+        render();
+        
+        preventMainMenuRedraw--;
+      }
       
       speed = 0.01;
       trailLength = 50;
@@ -135,6 +140,7 @@ class MainMenu
     
     void clock()
     {
+      textSize(35);
       textAlign(RIGHT);
       text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width - width / 8 + 100, height / 2);
     }
@@ -144,5 +150,69 @@ class MainMenu
     //Checking if mouse is over a button and if mouse is clicked
     void buttons()
     {
+      //Checking if both mouse over certain rectangle and if mouse is pressed
+      //Button 1
+      if (mouseOverRect(r1X, r1Y, rW, rH))
+      {
+        if (mousePressed == true)
+        {
+          gameState = 1;
+        }
+        fill(255, 0, 0);
+        
+      }
+      else
+      {
+        fill(0);
+      }
+      rect(r1X, r1Y, rW, rH);
+      //Text
+      textSize(rH / 4);
+      text("Select a loadout", r1X, r1Y - 35);
+      
+      
+      //Button 2
+      if (mouseOverRect(r2X, r2Y, rW, rH))
+      {
+        if (mousePressed == true)
+        {
+          gameState = 2;
+        }
+        fill(255, 0, 0);
+        
+      }
+      else
+      {
+        fill(0);
+      }
+      rect(r2X, r2Y, rW, rH);
+      //Text
+      text("See weapon stats", r2X, r2Y - 35);
+      
+      
+      //Button 3
+      if (mouseOverRect(r3X, r3Y, rW, rH))
+      {
+        if (mousePressed == true)
+        {
+          gameState = 3;
+        }
+        fill(255, 0, 0);
+        
+      }
+      else
+      {
+        fill(0);
+      }
+      rect(r3X, r3Y, rW, rH);
+      //Text
+      text("Logout", r3X, r3Y - 35);
+    }
+    
+    //Boolean function to check if mouse is over one of the buttons
+    boolean mouseOverRect(float x, float y, float w, float h)
+    {
+      return (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h );
+      
     }
 }

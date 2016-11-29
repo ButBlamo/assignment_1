@@ -49,6 +49,8 @@ float thetaAdder = 0.1;
 //Gamestate will determine what screen is loaded
 int gameState = 0;
 
+int preventMainMenuRedraw = 1;
+
 void draw()
 {
   //Later on in the draw once the main menu is loaded we cant have the login screen looping every frame
@@ -91,9 +93,12 @@ void draw()
     //Move onto main menu now
     if (gameState == 0 && loadingScreenCounter == 300)
     {
-       mainScreen = new MainMenu();
-       mainScreen.radar();
-       mainScreen.clock();
+        mainScreen = new MainMenu();
+        
+        mainScreen.radar();
+        mainScreen.clock();
+        mainScreen.buttons();
+       
     }
     else if (gameState == 1 && loadingScreenCounter == 300)
     {
