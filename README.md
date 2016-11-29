@@ -49,3 +49,7 @@ What I was most proud of in this assignment:
 	
 	
 	[![Video](http://img.youtube.com/vi/https://watch?v=aXKoSmYp4CQ&t=1s&ab_channel=Toerag/0.jpg)](https://www.youtube.com/watch?v=aXKoSmYp4CQ&feature=youtu.be&ab_channel=Toerag)
+	
+	imbed doesn't want to work... Use this link to see the video 
+	
+		https://www.youtube.com/watch?v=aXKoSmYp4CQ&feature=youtu.be&ab_channel=Toerag
