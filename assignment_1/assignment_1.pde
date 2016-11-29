@@ -95,6 +95,15 @@ void draw()
        mainScreen.radar();
        mainScreen.clock();
     }
+    else if (gameState == 1 && loadingScreenCounter == 300)
+    {
+    }
+    else if (gameState == 2 && loadingScreenCounter == 300)
+    {
+    }
+    else if (gameState == 3 && loadingScreenCounter == 300)
+    {
+    }
   }
 }
 

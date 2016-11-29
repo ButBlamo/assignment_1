@@ -30,6 +30,20 @@ class MainMenu
   int s;
   
   
+  //Button variables
+  float r1X;
+  float r1Y;
+      
+  float r2X;
+  float r2Y;
+      
+  float r3X;
+  float r3Y;
+  
+  float rW;
+  float rH;
+  
+  
     //Default constructor for main menu
     MainMenu()
     {
@@ -56,6 +70,23 @@ class MainMenu
       h = hour();
       m = minute();
       s = second();
+      
+      
+      //Button variables
+      r1X = 0;
+      r1Y = height / 4;
+      
+      r2X = 0;;
+      r2Y = height / 2; 
+      
+      r3X = 0;
+      r3Y = height - height / 4;
+      
+      //Width and height of rectangles
+      rW = width / 4 - 50;
+      rH = height / 6;
+      
+      
     }
     
     void render()
@@ -106,5 +137,12 @@ class MainMenu
     {
       textAlign(RIGHT);
       text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width - width / 8 + 100, height / 2);
+    }
+    
+    
+    
+    //Checking if mouse is over a button and if mouse is clicked
+    void buttons()
+    {
     }
 }
