@@ -177,7 +177,6 @@ void keyPressed()
       enterCounter--;
 
       
-      
     }
     //Refresh screen if credentials not fully entered
     if (enterCounter < 2)
