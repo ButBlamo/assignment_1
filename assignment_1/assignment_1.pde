@@ -118,17 +118,20 @@ void draw()
       textSize(50);
       textAlign(LEFT);
       fill(255);
-      text("Check the log output for values", 0, height / 2);
+      
+      println("Sales in millions for each month of 2016");
+      
       BarChart displayFile = new BarChart();
       for (int row = 0; row < stats.size(); row++)
       {
         displayFile = stats.get(row);
         
+        
         println(displayFile);
         
       }
       //Wait 5 seconds then exit program
-      delay(5000);
+      delay(10000);
       exit();
       
     }
