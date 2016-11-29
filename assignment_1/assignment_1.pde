@@ -93,6 +93,7 @@ void draw()
     {
        mainScreen = new MainMenu();
        mainScreen.radar();
+       mainScreen.clock();
     }
   }
 }

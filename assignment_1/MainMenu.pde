@@ -24,6 +24,12 @@ class MainMenu
   color c;
   
   
+  //Clock variables
+  int h;
+  int m;
+  int s;
+  
+  
     //Default constructor for main menu
     MainMenu()
     {
@@ -31,7 +37,7 @@ class MainMenu
       scale = new PVector(0 , 0);
       
       menu = createGraphics(width / 4, height);
-      rightMenu = createGraphics(width / 4, height / 2);
+      rightMenu = createGraphics(width / 4, height - height / 4);
       
       //Image file loaded to PImage image
       img = loadImage("briefing.jpg");
@@ -46,6 +52,10 @@ class MainMenu
       radius = width / 16;
       c = color(0, 0, 255);
       
+      //Clock shenanigans
+      h = hour();
+      m = minute();
+      s = second();
     }
     
     void render()
@@ -81,7 +91,7 @@ class MainMenu
       
       
       thetaLine = theta - (i * speed);
-      stroke(0, 0, 255);
+      stroke(c);
       pos.x = centerPos.x + sin(thetaLine) * radius;
       pos.y = centerPos.y - cos(thetaLine) * radius;
       line(centerPos.x, centerPos.y, pos.x, pos.y);
@@ -89,5 +99,12 @@ class MainMenu
       i++;
       
       
+    }
+    
+    
+    void clock()
+    {
+      textAlign(RIGHT);
+      text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width - width / 8 + 100, height / 2);
     }
 }
