@@ -23,8 +23,18 @@ class Sphere
     
     void makeRotate()
     {
+      img.resize(width, height);
       //Loading image to scaled size
-      image(img, 0, 0); 
+      
+      beginShape();
+      texture(img);
+      
+      vertex(0, 0);
+      vertex(width, 0);
+      vertex(0, height);
+      vertex(width, height);
+      
+      endShape();
       
       fill(c);
       
