@@ -141,7 +141,9 @@ void keyPressed()
     else if (enterCounter > 0)
     {
       enterCounter--;
-      inputs[enterCounter] = inputs[enterCounter].substring(0, inputs[enterCounter].length() - 1);
+
+      
+      
     }
     //Refresh screen if credentials not fully entered
     if (enterCounter < 2)
@@ -164,6 +166,12 @@ void keyPressed()
   else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT && enterCounter < 2 && inputs[enterCounter].length() < 18 )
   {
     inputs[enterCounter] = inputs[enterCounter] + key;
+  }
+  
+  //Prevent escape!!
+  if (key == ESC)
+  {
+    key = 0;
   }
   
 }//End fxn keyPressed

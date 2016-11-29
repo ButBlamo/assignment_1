@@ -1,3 +1,6 @@
+//Make it so the program is eventually exited in the event a sphere is created
+int timer = 0;
+
 class Sphere 
 {
   color c;
@@ -29,10 +32,10 @@ class Sphere
       beginShape();
       texture(img);
       
-      vertex(0, 0);
-      vertex(width, 0);
-      vertex(0, height);
-      vertex(width, height);
+      vertex(0, 0,  0, 0);
+      vertex(width, 0, -1000,  0);
+      vertex(0, height, -1000,  100);
+      vertex(width, height, -1000,  100);
       
       endShape();
       
@@ -50,5 +53,11 @@ class Sphere
         sphere(width / 6);
         
         popMatrix();
+        
+        timer++;
+        if (timer == 300)
+        {
+          exit();
+        }
     }
 }
