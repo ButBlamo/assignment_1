@@ -2,6 +2,8 @@
 
 //Create arraylist for holding "correct" usernames and passwords
 ArrayList<LoginText> users = new ArrayList<LoginText>();
+//BarChart arraylist
+ArrayList<BarChart> stats = new ArrayList<BarChart>();
 
 Loading loadsMenu;
 
@@ -35,9 +37,16 @@ void setup()
   
   
   //Second table for bar chart
-  t = loadTable("statistics.tsv", "header");
+  t = loadTable("stats.tsv", "header");
   
   rowCount = t.getRowCount();
+  
+  for (row = 0; row < rowCount; row++)
+  {
+    BarChart statsBuffer = new BarChart(t.getString(row, "numberSold"), t.getString(row, "Month"));
+    
+    stats.add(statsBuffer);
+  }
   
 }
 
@@ -106,6 +115,21 @@ void draw()
     }
     else if (gameState == 1 && loadingScreenCounter == 300)
     {
+      textSize(50);
+      textAlign(LEFT);
+      fill(255);
+      text("Check the log output for values", 0, height / 2);
+      BarChart displayFile = new BarChart();
+      for (int row = 0; row < stats.size(); row++)
+      {
+        displayFile = stats.get(row);
+        
+        println(displayFile);
+        
+      }
+      //Wait 10 seconds then exit program
+      delay(10000);
+      
     }
     else if (gameState == 2 && loadingScreenCounter == 300)
     {
