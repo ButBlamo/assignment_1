@@ -1,5 +1,6 @@
 //Global float for radar
 float thetaLine = 0;
+//Allows radar to spin
 int i = 0;
 
 
@@ -56,12 +57,8 @@ class MainMenu
       //Image file loaded to PImage image
       img = loadImage("briefing.jpg");
       
-      if (preventMainMenuRedraw == 1)
-      {
         render();
         
-        preventMainMenuRedraw--;
-      }
       
       speed = 0.01;
       trailLength = 50;
@@ -141,6 +138,7 @@ class MainMenu
     void clock()
     {
       textSize(35);
+      fill(0, 0, 255);
       textAlign(RIGHT);
       text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width - width / 8 + 100, height / 2);
     }
@@ -157,6 +155,9 @@ class MainMenu
         if (mousePressed == true)
         {
           gameState = 1;
+          
+          background(0);
+          return;
         }
         fill(255, 0, 0);
         
@@ -177,6 +178,9 @@ class MainMenu
         if (mousePressed == true)
         {
           gameState = 2;
+          
+          background(0);
+          return;
         }
         fill(255, 0, 0);
         
@@ -196,6 +200,9 @@ class MainMenu
         if (mousePressed == true)
         {
           gameState = 3;
+          
+          background(0);
+          return;
         }
         fill(255, 0, 0);
         

@@ -7,7 +7,7 @@ Loading loadsMenu;
 
 void setup()
 {
-  size(1280, 720);
+  size(1280, 720, P3D);
   
   //Load in once the values of the tsv users into arraylist users
   //Using setup prevents unnecessary repetition of code
@@ -48,8 +48,6 @@ float thetaAdder = 0.1;
 
 //Gamestate will determine what screen is loaded
 int gameState = 0;
-
-int preventMainMenuRedraw = 1;
 
 void draw()
 {
@@ -105,9 +103,12 @@ void draw()
     }
     else if (gameState == 2 && loadingScreenCounter == 300)
     {
+      Sphere rotatingSphere = new Sphere();
     }
     else if (gameState == 3 && loadingScreenCounter == 300)
     {
+      exit();
+      
     }
   }
 }
